@@ -1,0 +1,45 @@
+<table cTable hover>
+    <thead>
+        <tr>
+            <th scope="col" *ngFor="let column of dataGridColumns" [style]="column.columnStyles">
+                {{column.columnName}}
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td *ngFor="let column of dataGridColumns">
+                <!-- <span *ngIf="column.columnControl == 'text'">{{ (column.dataLayerCount == 1 ?
+                    (data[column.firstDataLayerProperty]): (column.dataLayerCount == 2 ?
+                    data[column.firstDataLayerProperty][column.secondDataLayerProperty]:
+                    data[column.firstDataLayerProperty][column.secondDataLayerProperty][column.thirdDataLayerProperty]
+                    ))}} </span>
+                <p-inputSwitch *ngIf="column.columnControl == 'switch'" [(ngModel)]="data[column.firstDataLayerProperty]"
+                    (onChange)="switchChange({$event,data})" /> -->
+            </td>
+            <!-- <td *ngIf="editable">
+                <i class="fas fa-edit cursor-pointer" (click)="editData(data)"></i>
+            </td>
+            <td *ngIf="deletable">
+                <i class="fas fa-trash cursor-pointer" (click)="deleteData(data)"></i>
+            </td> -->
+        </tr>
+        <tr>
+            <th >1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>&#64;mdo</td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>&#64;fat</td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td colSpan="2">Larry the Bird</td>
+            <td>&#64;twitter</td>
+        </tr>
+    </tbody>
+</table>
