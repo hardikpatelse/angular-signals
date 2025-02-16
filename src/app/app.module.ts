@@ -3,7 +3,9 @@ import { BrowserModule, provideClientHydration, withEventReplay } from '@angular
 
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
-import { GridModule } from '@coreui/angular'
+import { provideHttpClient } from '@angular/common/http'
+import { ContainerComponent } from '@coreui/angular'
+
 
 @NgModule({
   declarations: [
@@ -12,10 +14,11 @@ import { GridModule } from '@coreui/angular'
   imports: [
     BrowserModule,
     AppRoutingModule,
-    GridModule
+    ContainerComponent
   ],
   providers: [
-    provideClientHydration(withEventReplay())
+    provideClientHydration(withEventReplay()),
+    provideHttpClient()
   ],
   bootstrap: [AppComponent]
 })
