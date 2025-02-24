@@ -1,0 +1,13 @@
+<c-row class="bg-dark post-detail padding-10" *ngFor="let item of posts()" (click)="postSelected(item)">
+    <c-col [sm]="12">
+        {{item.title}}
+    </c-col>
+    <c-col [sm]="6" class="post-views padding-top10" *ngIf="item.id > 0">
+        <fa-icon [icon]="faEye" class="padding-right5"></fa-icon><i class="padding-right10">{{item.views}}</i>
+    </c-col>
+    <c-col [sm]="6" class="post-author padding-top10" *ngIf="item.id > 0">
+        <fa-icon [icon]="faThumbsUp" class="padding-right5"></fa-icon><i
+            class="padding-right10">{{item.reactions.likes}}</i>
+        <fa-icon [icon]="faThumbsDown" class="padding-right5"></fa-icon><i>{{item.reactions.dislikes}}</i>
+    </c-col>
+</c-row>

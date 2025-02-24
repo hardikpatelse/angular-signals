@@ -1,1 +1,6 @@
-<app-datacard [dataSource]="cardDataSource"></app-datacard>
+<c-row class="post-row">
+    <c-col [sm]="12">
+        <c-header-brand [routerLink]>Users</c-header-brand>
+    </c-col>
+</c-row>
+<app-datacard [dataSource]="cardDataSource" (onSelectedData)="selectedUser($event)"></app-datacard>

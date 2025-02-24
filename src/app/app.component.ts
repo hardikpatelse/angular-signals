@@ -1,20 +1,18 @@
-import { Component } from '@angular/core'
-import { AppRoutes } from './constants/approutes'
-import { AppRoutesNames } from './constants/approutesnames'
-import { Router } from '@angular/router'
+import { Component, OnInit } from '@angular/core'
+import { Router, NavigationEnd, ActivatedRoute } from '@angular/router'
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   standalone: false,
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'angular-signals';
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private route: ActivatedRoute) { }
 
-
+  ngOnInit() {
   }
 
   goToPage(pageName: string) {

@@ -1,7 +1,7 @@
 import { NgModule } from "@angular/core"
 import { CommonModule } from "@angular/common"
 import { DatacardComponent } from "./datacard.component"
-import { CardBodyComponent, CardImgDirective, CardModule, CardTextDirective, CardTitleDirective, ColComponent, GutterDirective, ImgModule, RowComponent } from '@coreui/angular'
+import { ButtonModule, CardBodyComponent, CardImgDirective, CardModule, CardTextDirective, CardTitleDirective, ColComponent, GutterDirective, ImgModule, RowComponent } from '@coreui/angular'
 
 @NgModule({
   imports: [
@@ -14,7 +14,8 @@ import { CardBodyComponent, CardImgDirective, CardModule, CardTextDirective, Car
     CardBodyComponent,
     CardTitleDirective,
     CardTextDirective,
-    ImgModule
+    ImgModule,
+    ButtonModule
   ],
   exports: [
     DatacardComponent

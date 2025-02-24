@@ -1,14 +1,19 @@
 <c-row [gutter]="5" class="mb-4" [md]="4" [xs]="1">
     <c-col *ngFor="let card of dataSource">
         <c-card class="h-100">
+            <c-card-header>
+                <h5 cCardTitle>{{card.title}}</h5>
+            </c-card-header>
             <br />
             <img cImg align="center" *ngIf="card.image" height="128" width="128" src="{{card.image}}">
             <c-card-body>
-                <h5 cCardTitle>{{card.title}}</h5>
                 <p cCardText *ngFor="let body of card.bodies">
                     {{body}}
                 </p>
             </c-card-body>
+            <c-card-footer>
+                <c-button cButton color="primary" size="sm" (click)="onCardClick(card.id)">View Posts</c-button>
+            </c-card-footer>
         </c-card>
     </c-col>
 </c-row>
