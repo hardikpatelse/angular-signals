@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { UserService } from '../../services/user.service'
 import { CardDataProperties } from '../../models/customs/carddataproperties'
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-users',
@@ -10,7 +11,8 @@ import { CardDataProperties } from '../../models/customs/carddataproperties'
 })
 export class UsersComponent implements OnInit {
   cardDataSource: CardDataProperties[] = [];
-  constructor(private userService: UserService) {
+
+  constructor(private userService: UserService, private router: Router) {
 
   }
 
@@ -31,6 +33,11 @@ export class UsersComponent implements OnInit {
         })
       }
     })
+  }
+
+  selectedUser(id: number): void {
+    console.log('selected user id: ', id)
+    this.router.navigate(['posts/' + id])
   }
 
 }

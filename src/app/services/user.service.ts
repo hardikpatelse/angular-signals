@@ -16,7 +16,7 @@ export class UserService {
     return this.http.get<UserResponse>(`${this.baseUrl}`)
   }
 
-  getUser(id: number) {
+  getUserById(id: number) {
     return this.http.get<User>(`${this.baseUrl}/${id}`)
   }
 

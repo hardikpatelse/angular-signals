@@ -4,17 +4,18 @@ import { BrowserModule, provideClientHydration, withEventReplay } from '@angular
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
 import { provideHttpClient } from '@angular/common/http'
-import { ContainerComponent } from '@coreui/angular'
-
+import { ContainerComponent, NavbarModule, NavModule } from '@coreui/angular'
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ContainerComponent
+    ContainerComponent,
+    NavbarModule,
+    NavModule
   ],
   providers: [
     provideClientHydration(withEventReplay()),

@@ -10,6 +10,12 @@ const routes: Routes = [
       then(mod => mod.UsersModule),
     title: PageTitles.UsersTitle
   },
+  {
+    path: `${AppRoutes.Posts}/:userId`,
+    loadChildren: () => import('./pages/posts/posts.module').
+      then(mod => mod.PostsModule),
+    title: PageTitles.PostTitle
+  }
 ]
 
 @NgModule({

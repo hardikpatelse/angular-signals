@@ -1,0 +1,26 @@
+<c-row class="bg-dark post-detail padding-15">
+    <c-col [sm]="12" class="padding-15">
+        <h3>{{selectedPost()?.title}}</h3>
+    </c-col>
+    <c-col [sm]="12" class="post-author">
+        <i>- {{selectedUser()?.firstName + ' ' + selectedUser()?.lastName}}</i>
+    </c-col>
+    <c-col [sm]="6" class="post-views padding-top15">
+        <fa-icon [icon]="faEye" class="padding-right5"></fa-icon><i>{{selectedPost()?.views}}</i>
+    </c-col>
+    <c-col [sm]="6" class="post-author padding-top15">
+        <fa-icon [icon]="faThumbsUp" class="padding-right5"></fa-icon><i
+            class="padding-right10">{{selectedPost()?.reactions?.likes}}</i>
+        <fa-icon [icon]="faThumbsDown" class="padding-right5"></fa-icon><i>{{selectedPost()?.reactions?.dislikes}}</i>
+    </c-col>
+    <c-col [sm]="12" class="post-views padding-top15">
+        <fa-icon [icon]="faTags" class="padding-right5"></fa-icon>
+        <ng-container *ngFor="let tag of selectedPost()?.tags; last as isLast">
+            <i>{{tag}}</i>
+            <span *ngIf="!isLast">,&nbsp;&nbsp;</span>
+        </ng-container>
+    </c-col>
+    <c-col [sm]="12" class="post-body">
+        {{selectedPost()?.body}}
+    </c-col>
+</c-row>

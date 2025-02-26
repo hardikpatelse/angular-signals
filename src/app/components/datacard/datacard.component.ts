@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core'
+import { Component, EventEmitter, Input, Output } from '@angular/core'
 import { CardDataProperties } from '../../models/customs/carddataproperties'
 
 @Component({
@@ -9,4 +9,9 @@ import { CardDataProperties } from '../../models/customs/carddataproperties'
 })
 export class DatacardComponent {
   @Input() dataSource!: CardDataProperties[]
+  @Output() onSelectedData = new EventEmitter<number>()
+
+  onCardClick(id: number): void {
+    this.onSelectedData.emit(id)
+  }
 }

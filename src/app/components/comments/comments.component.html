@@ -1,0 +1,18 @@
+<c-row class="post-row">
+    <c-col [sm]="12">
+        <c-header-brand>Comments</c-header-brand>
+    </c-col>
+</c-row>
+<c-row class="bg-dark post-detail" *ngFor="let item of comments()">
+    <c-col [sm]="12" class="padding-15">
+        <c-col [sm]="12">
+            {{item.body}}
+        </c-col>
+        <c-col [sm]="12" class="post-views padding-top10" *ngIf="item.id > 0">
+            <i>- {{item.user.fullName}}</i>
+        </c-col>
+        <c-col [sm]="12" class="post-author padding-top10" *ngIf="item.id > 0">
+            <fa-icon [icon]="faThumbsUp" class="padding-right5"></fa-icon><i class="padding-right10">{{item.likes}}</i>
+        </c-col>
+    </c-col>
+</c-row>
